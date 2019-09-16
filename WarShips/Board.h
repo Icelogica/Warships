@@ -5,10 +5,10 @@ class Board
 {
 public:
 	void Draw();
+	int GetSizeOfBoard();
 private:
-	static constexpr int width = 11;
-	static constexpr int height = 11;
-	char board[width][height] = {
+	static constexpr int boardSize = 11;
+	char board[boardSize][boardSize] = {
 		{' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'},
 		{'1', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
 		{'2', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},

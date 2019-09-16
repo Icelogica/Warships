@@ -9,11 +9,13 @@
 class Game
 {
 public:
-	Game() = default;
+	Game();
 	void Update();
 	void ComposeFrame();
 	bool GameOver();
 private:
+	static constexpr int nShip = 5;
 	Board b;
+	Ship ships[nShip];
 };
 

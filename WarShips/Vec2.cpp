@@ -13,8 +13,3 @@ Vec2::Vec2(int x_in, int y_in)
 	y(y_in)
 {
 }
-
-Vec2 Vec2::GetVector()
-{
-	return Vec2();
-}
