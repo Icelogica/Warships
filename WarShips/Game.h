@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <random>
 #include <ctime>
+#include <Windows.h>
 
 #include "Board.h"
 #include "Ship.h"
@@ -10,6 +11,7 @@ class Game
 {
 public:
 	Game();
+	int RadnomPosition();
 	void Update();
 	void ComposeFrame();
 	bool GameOver();
