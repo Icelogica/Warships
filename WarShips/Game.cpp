@@ -2,6 +2,7 @@
 
 void Game::Update()
 {
+	srand(time(NULL));
 }
 
 void Game::ComposeFrame()

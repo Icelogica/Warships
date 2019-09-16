@@ -1,6 +1,10 @@
 #pragma once
 #include <stdlib.h>
+#include <random>
+#include <ctime>
+
 #include "Board.h"
+#include "Ship.h"
 
 class Game
 {
