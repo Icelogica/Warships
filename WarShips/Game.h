@@ -1,4 +1,7 @@
 #pragma once
+#include <stdlib.h>
+#include "Board.h"
+
 class Game
 {
 public:
@@ -6,5 +9,7 @@ public:
 	void Update();
 	void ComposeFrame();
 	bool GameOver();
+private:
+	Board b;
 };
 
