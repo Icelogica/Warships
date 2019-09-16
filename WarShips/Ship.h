@@ -10,7 +10,7 @@ public:
 	Ship(Vec2 pos, int shipLenght_in);
 private:
 	Vec2 position;
-	bool horizontalPosition;
-	int shipLenght;
+	bool horizontalPosition = false;
+	int shipLenght = 0;
 };
 
