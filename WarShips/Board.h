@@ -1,11 +1,14 @@
 #pragma once
 #include <iostream>
 
+#include "Ship.h"
+
 class Board
 {
 public:
 	void Draw();
 	int GetSizeOfBoard();
+	void PutShipToBoard(Ship& ship) const;
 private:
 	static constexpr int boardSize = 11;
 	char board[boardSize][boardSize] = {

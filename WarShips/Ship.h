@@ -8,6 +8,9 @@ class Ship
 public:
 	Ship() = default;
 	Ship(Vec2 pos, int shipLenght_in);
+	Vec2 GetPositionOfShip();
+	int GetSizeOfShip();
+	bool GetHorizontalPos();
 private:
 	Vec2 position;
 	bool horizontalPosition = false;

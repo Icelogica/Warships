@@ -17,3 +17,14 @@ int Board::GetSizeOfBoard()
 {
 	return boardSize;
 }
+
+void Board::PutShipToBoard( Ship& ship) const
+{
+	if (ship.GetHorizontalPos())
+	{
+		for (int i = ship.GetPositionOfShip().x; i < ship.GetSizeOfShip(); i++)
+		{
+			board[ship.GetPositionOfShip().y][i] = 'X';
+		}
+	}
+}

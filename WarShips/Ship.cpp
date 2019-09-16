@@ -14,3 +14,18 @@ Ship::Ship(Vec2 pos, int shipLenght_in)
 		horizontalPosition = true;
 	}
 }
+
+Vec2 Ship::GetPositionOfShip()
+{
+	return position;
+}
+
+int Ship::GetSizeOfShip()
+{
+	return shipLenght;
+}
+
+bool Ship::GetHorizontalPos()
+{
+	return horizontalPosition;
+}
