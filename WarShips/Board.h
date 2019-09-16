@@ -8,7 +8,7 @@ class Board
 public:
 	void Draw();
 	int GetSizeOfBoard();
-	void PutShipToBoard(Ship& ship) const;
+	void PutShipToBoard(const Ship& ship);
 private:
 	static constexpr int boardSize = 11;
 	char board[boardSize][boardSize] = {

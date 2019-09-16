@@ -18,7 +18,7 @@ int Board::GetSizeOfBoard()
 	return boardSize;
 }
 
-void Board::PutShipToBoard( Ship& ship) const
+void Board::PutShipToBoard(const Ship& ship)
 {
 	if (ship.GetHorizontalPos())
 	{

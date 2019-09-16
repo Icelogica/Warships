@@ -15,17 +15,17 @@ Ship::Ship(Vec2 pos, int shipLenght_in)
 	}
 }
 
-Vec2 Ship::GetPositionOfShip()
+Vec2 Ship::GetPositionOfShip() const
 {
 	return position;
 }
 
-int Ship::GetSizeOfShip()
+int Ship::GetSizeOfShip() const
 {
 	return shipLenght;
 }
 
-bool Ship::GetHorizontalPos()
+bool Ship::GetHorizontalPos() const
 {
 	return horizontalPosition;
 }
