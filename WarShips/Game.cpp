@@ -9,8 +9,7 @@ Game::Game()
 	for (int i = 0; i < nShip; i++)
 	{
 		ships[i] = Ship(Vec2(RadnomPosition(), RadnomPosition()), i + 1);
-		std::cout << ships[i].GetPositionOfShip().x << " " << ships[i].GetPositionOfShip().y << std::endl;
-		b.PutShipToBoard(ships[i]);
+		b.PutShip(ships[i]);
 	}
 }
 
@@ -21,7 +20,6 @@ int Game::RadnomPosition()
 
 void Game::Update()
 {
-	srand(time(NULL));
 }
 
 void Game::ComposeFrame()

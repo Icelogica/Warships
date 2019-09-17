@@ -8,7 +8,8 @@ class Board
 public:
 	void Draw();
 	int GetSizeOfBoard();
-	void PutShipToBoard(const Ship& ship);
+	void PutShip(Ship& ship);
+	bool CheckingCollision(Ship& ship) const;
 private:
 	static constexpr int boardSize = 11;
 	char board[boardSize][boardSize] = {
