@@ -4,7 +4,7 @@
 
 Game::Game()
 {
-	srand(time(NULL));
+	srand(time(0));
 
 	for (int i = 0; i < nShip; i++)
 	{
