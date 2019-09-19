@@ -7,12 +7,12 @@ void Player::SetShootPosition()
 	std::cin >> numberPos;
 }
 
-char Player::GetLetterPos()
+char Player::GetLetterPos() const
 {
 	return letterPos;
 }
 
-char Player::GetNumberPos()
+char Player::GetNumberPos() const
 {
 	return numberPos;
 }

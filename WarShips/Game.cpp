@@ -35,5 +35,13 @@ void Game::ComposeFrame()
 
 bool Game::GameOver()
 {
-	return false;
+	if (bPlayer.GetFieldNum() == b.GetFieldNum())
+	{
+		std::cout << "You Win" << std::endl;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

@@ -23,15 +23,23 @@ int Board::GetSizeOfBoard()
 	return boardSize;
 }
 
-void Board::PutShip(Ship& ship)
+int Board::GetFieldNum() const
 {
-	while (CheckingCollision(ship))//ships collision
+	return fieldNum;
+}
+
+void Board::PutShip(Ship ship)
+{
+	fieldNum = fieldNum + ship.GetSizeOfShip();
+	// Checking ships collision and if collison is true it will find another position for last created ship
+	while (CheckingCollision(ship))
 	{
 		int x = rand() %(boardSize - 2) + 1;
 		int y = rand() %(boardSize - 2) + 1;
 		ship.RestartShipPosition(x, y);
 	}
 
+	//Putting ship on board
 	if (ship.GetHorizontalPos())
 	{
 		for (int i = ship.GetPositionOfShip().x; i < ship.GetPositionOfShip().x + ship.GetSizeOfShip(); i++)
@@ -54,6 +62,7 @@ void Board::MappingShoot(Player& player, const Board& b)
 	if (b.ReturnPos(shootPos) == 'X')
 	{
 		board[shootPos.y][shootPos.x] = 'X';
+		fieldNum++;
 	}
 	else if (b.ReturnPos(shootPos) == ' ')
 	{
@@ -80,8 +89,6 @@ bool Board::CheckingCollision(Ship& ship) const
 			{
 				return true;
 			}
-			
-			
 		}
 		return false;
 	}
@@ -115,7 +122,6 @@ void Board::ConvertingCharToInt(Player player)
 			shootPos.y = i;
 		}
 	}
-
 }
 
 
