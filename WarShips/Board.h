@@ -3,14 +3,19 @@
 
 #include "Ship.h"
 
+class Player;
+
 class Board
 {
 public:
 	void Draw();
+	char ReturnPos(Vec2 pos) const;
 	int GetSizeOfBoard();
 	void PutShip(Ship& ship);
+	void MappingShoot(Player& player, const Board& b);
 	bool CheckingCollision(Ship& ship) const;
 private:
+	void ConvertingCharToInt(Player player);
 	static constexpr int boardSize = 11;
 	char board[boardSize][boardSize] = {
 		{' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'},
@@ -24,5 +29,17 @@ private:
 		{'8', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
 		{'9', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
 		{'1', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '} };
+	Vec2 shootPos;
 };
 
+
+class Player
+{
+public:
+	void SetShootPosition();
+	char GetLetterPos();
+	char GetNumberPos();
+private:
+	char letterPos;
+	char numberPos;;
+};

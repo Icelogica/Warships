@@ -17,6 +17,8 @@ public:
 	bool GameOver();
 private:
 	static constexpr int nShip = 5;
+	Player p;
+	Board bPlayer;
 	Board b;
 	Ship ships[nShip];
 };

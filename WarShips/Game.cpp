@@ -20,12 +20,16 @@ int Game::RadnomPosition()
 
 void Game::Update()
 {
+	p.SetShootPosition();
+	bPlayer.MappingShoot(p, b);
 }
 
 void Game::ComposeFrame()
 {
 	system("CLS");
 	b.Draw();
+	std::cout<<std::endl;
+	bPlayer.Draw();
 	Sleep(1000);
 }
 

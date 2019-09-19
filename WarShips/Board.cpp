@@ -13,6 +13,11 @@ void Board::Draw()
 	}
 }
 
+char Board::ReturnPos(Vec2 pos) const
+{
+	return board[pos.y][pos.x];
+}
+
 int Board::GetSizeOfBoard()
 {
 	return boardSize;
@@ -41,6 +46,24 @@ void Board::PutShip(Ship& ship)
 			board[i][ship.GetPositionOfShip().x] = 'X';
 		}
 	}
+}
+
+void Board::MappingShoot(Player& player, const Board& b)
+{
+	ConvertingCharToInt(player);
+	if (b.ReturnPos(shootPos) == 'X')
+	{
+		board[shootPos.y][shootPos.x] = 'X';
+	}
+	else if (b.ReturnPos(shootPos) == ' ')
+	{
+		board[shootPos.y][shootPos.x] = 'O';
+	}
+	else
+	{
+		std::cout << "Out of range!" << std::endl;
+	}
+
 }
 
 bool Board::CheckingCollision(Ship& ship) const
@@ -77,4 +100,36 @@ bool Board::CheckingCollision(Ship& ship) const
 		}
 		return false;
 	}
+}
+
+void Board::ConvertingCharToInt(Player player)
+{
+	for (int i = 1; i < boardSize; i++)
+	{
+		if (player.GetLetterPos() == board[0][i])
+		{
+			shootPos.x = i;
+		}
+		if (player.GetNumberPos() == board[i][0])
+		{
+			shootPos.y = i;
+		}
+	}
+
+}
+
+void Player::SetShootPosition()
+{
+	std::cin >> letterPos;
+	std::cin >> numberPos;
+}
+
+char Player::GetLetterPos()
+{
+	return letterPos;
+}
+
+char Player::GetNumberPos()
+{
+	return numberPos;
 }
