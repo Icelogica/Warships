@@ -7,7 +7,9 @@ public:
 	void SetShootPosition();
 	char GetLetterPos() const;
 	char GetNumberPos() const;
+	int GetNumberOfShots() const;
 private:
 	char letterPos;
-	char numberPos;;
+	char numberPos;
+	int numberofShots = 0;
 };

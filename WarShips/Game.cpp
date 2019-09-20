@@ -5,7 +5,8 @@
 Game::Game()
 {
 	srand(time(0));
-
+	std::cout << "Write first position between A and J" << std::endl;
+	std::cout << "and second position between 0 and 9" << std::endl;
 	for (int i = 0; i < nShip; i++)
 	{
 		ships[i] = Ship(Vec2(RadnomPosition(), RadnomPosition()), i + 1);
@@ -27,7 +28,7 @@ void Game::Update()
 void Game::ComposeFrame()
 {
 	system("CLS");
-	b.Draw();
+	//b.Draw();
 	std::cout<<std::endl;
 	bPlayer.Draw();
 	Sleep(1000);
@@ -37,7 +38,9 @@ bool Game::GameOver()
 {
 	if (bPlayer.GetFieldNum() == b.GetFieldNum())
 	{
+		std::cout << std::endl;
 		std::cout << "You Win" << std::endl;
+		std::cout << "You shot: " << p.GetNumberOfShots() << " times.";
 		return true;
 	}
 	else

@@ -4,6 +4,7 @@
 #include <ctime>
 #include <Windows.h>
 
+#include "Player.h"
 #include "Board.h"
 #include "Ship.h"
 

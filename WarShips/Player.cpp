@@ -3,8 +3,10 @@
 
 void Player::SetShootPosition()
 {
+	std::cout<<std::endl;
 	std::cin >> letterPos;
 	std::cin >> numberPos;
+	numberofShots++;
 }
 
 char Player::GetLetterPos() const
@@ -15,4 +17,9 @@ char Player::GetLetterPos() const
 char Player::GetNumberPos() const
 {
 	return numberPos;
+}
+
+int Player::GetNumberOfShots() const
+{
+	return numberofShots;
 }
