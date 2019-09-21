@@ -19,16 +19,15 @@ int Game::RadnomPosition()
 	return (rand() % b.GetSizeOfBoard()) + 1;
 }
 
-void Game::Update()
+void Game::Update()//mechanics
 {
 	p.SetShootPosition();
 	bPlayer.MappingShoot(p, b);
 }
 
-void Game::ComposeFrame()
+void Game::ComposeFrame()//visual part of game
 {
 	system("CLS");
-	//b.Draw();
 	std::cout<<std::endl;
 	bPlayer.Draw();
 	Sleep(1000);
